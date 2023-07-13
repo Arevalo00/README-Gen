@@ -1,6 +1,10 @@
 // TODO: Include packages needed for this application
+const inquirer = require('inquirer');
+const fs = require('fs');
 
 // TODO: Create an array of questions for user input
+inquirer .prompt ()
+
 const questions = [
 {
     type: 'input',
@@ -8,9 +12,9 @@ const questions = [
     name:'Github username',
 },
 {
-type: 'input',
-message:'What is your email address?',
-name: 'Email Adress'
+    type: 'input',
+    message:'What is your email address?',
+    name: 'Email Adress'
 
 },
 

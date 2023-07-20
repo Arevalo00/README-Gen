@@ -3,9 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-inquirer .prompt ()
-
-const questions = [
+inquirer .prompt([
  {
     type:'input',
     name:'Titel',
@@ -13,26 +11,54 @@ const questions = [
     
     },
     {
-        
+
     type: 'checkbox',
     message: 'What license would you like?',
     name: 'license',
     choices:['Artistic license 2.0', 'MIT','BSD 3-clause "New" or "Revised" license','Boost Software License 1.0'],
 
     },
+{}, 
 {
     type: 'input',
     message: 'What is your Github User name?',
-    name:'Github username',
+    name:'Githubusername',
 },
 {
     type: 'input',
     message:'What is your email address?',
-    name: 'Email Adress'
+    name: 'Email '
 
 },
 
-];
+]);
+
+const genReadme = ({Titel, license, Githubusername, Email}) => 
+`
+### Readme -- ${Titel}                       ${license}
+
+## Desription 
+
+Intro, here's a brife into to the project, talking about all 
+the details about this project 
+
+## Installation
+
+Here we can describe the different node packages that a project might 
+need in order to run. Like Inqirer or Jest for testing code. 
+
+
+
+
+
+
+
+
+
+
+
+
+`
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}

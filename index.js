@@ -31,6 +31,7 @@ inquirer .prompt([
 
 },
 
+
 ]);
 
 const genReadme = ({Titel, license, Githubusername, Email}) => 
@@ -47,21 +48,34 @@ the details about this project
 Here we can describe the different node packages that a project might 
 need in order to run. Like Inqirer or Jest for testing code. 
 
+## Usage 
 
+Here's were we can put all the info about the use cases for this 
+project can be outlined. 
 
+## Contubtors and tests 
 
+here's were you can list all the the different people 
+that help with the project 
 
+## Contact Info 
 
+Email ${Email} 
 
-
-
+Github User Name ${Githubusername}
 
 
 
 `
+genReadme();
+.then ((answers) => {
+    const contentReadme = genReadme(answers);
 
+    fs.writeFile('README.md', contentReadme)
+})
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
+
 
 // TODO: Create a function to initialize app
 function init() {}
